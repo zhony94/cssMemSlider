@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(130, 139, 146);
+    background-color: rgb(94, 102, 108);
 }
 
 .container {
@@ -13,6 +13,7 @@ body {
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 3fr 1fr;
+    row-gap: 20px;
     overflow: hidden;
 }
 .slides {
@@ -35,9 +36,8 @@ body {
 .slide img {
     width: 100%;
     height: 100%;
+    border-radius: 5px;
 }
-
-
 
 .text-control-wrapper {
     width: 100%;
@@ -56,6 +56,10 @@ body {
 
 .text {
     width: 25%;
+    font-weight: bold;
+    color: rgb(145, 228, 228);
+    padding-top: 3.5px;
+    transition: all .6s ease;
 }
 
 .slider-controller {
@@ -73,29 +77,46 @@ body {
     border-radius: 50%;
     cursor: pointer;
     margin: 6px;
-    background-color: rgb(2, 69, 69);
+    background-color: rgb(8, 60, 60);
     transition: all .4s ease;
 }
 
 .round:hover {
     opacity: 0.8;
     transform: scale(1.05);
-    background-color: aqua;
+    background-color: rgb(43, 117, 117);
 }
 
 input[name="radio"]{
     display: none;
 }
 
-#r1:checked ~ .s1 {
+#r1:checked ~ .slides .s1,
+#r1:checked ~ .text-control-wrapper .slider-text .t1 {
     margin-left: 0;
 }
-#r2:checked ~ .s1 {
+#r2:checked ~ .slides .s1,
+#r2:checked ~ .text-control-wrapper .slider-text .t1 {
     margin-left: -25%;
 }
-#r3:checked ~ .s1 {
+#r3:checked ~ .slides .s1,
+#r3:checked ~ .text-control-wrapper .slider-text .t1  {
     margin-left: -50%;
 }
-#r4:checked ~ .s1 {
+#r4:checked ~ .slides .s1,
+#r4:checked ~ .text-control-wrapper .slider-text .t1  {
     margin-left: -75%;
+}
+
+#r1:checked ~ .slider-controller .b1{
+    background-color: rgb(28, 222, 222);
+}
+#r2:checked ~ .slider-controller .b2 {
+    background-color: rgb(28, 222, 222);
+}
+#r3:checked ~ .slider-controller .b3 {
+    background-color: rgb(28, 222, 222);
+}
+#r4:checked ~ .slider-controller .b4 {
+    background-color: rgb(28, 222, 222);
 }
